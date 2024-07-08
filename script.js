@@ -15,3 +15,21 @@ let juros = valorEmprestimo * taxaJuros * numAnos
 let montante = valorEmprestimo + juros
 
 console.log(`Juros - > ${juros}, Montante - > ${montante}`)
+
+
+let numeroPizzas = 3
+numeroPizzas++
+console.log(numeroPizzas)
+
+let tenisA = 'Adidas'
+let tenisB = 'Nike'
+console.log(tenisA < tenisB)
+
+
+let condicao = 350
+let valorTotal = 750
+if(valorTotal >= condicao){
+    console.log('FRÉTE GRÁTIS')
+}else{
+    console.log('FRETE DE 25 R$')
+}
