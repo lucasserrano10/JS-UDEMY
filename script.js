@@ -227,26 +227,6 @@ console.log(novosNumerosFind)*/
 let indiceAleatorio = Math.floor(Math.random()*4)
 console.log(`O Ganhador da rifa foi ${compradoresRifa[indiceAleatorio]}`)*/
 
-let nome;
-let sobrenome;
-let idade;
-let valorEmprestimo;
-let taxaDeJuros;
-let numAnos;
-let ehBomPagador;
-let avalistas
-
-function cadastraCliente(nomeCliente,sobrenomeCliente,idadeCliente,valorEmprestimoCliente, numAnosCliente, ehBomPagadorCliente, avalistasCliente){
-    nome = nomeCliente;
-    sobrenome = sobrenomeCliente;
-    idade = idadeCliente;
-    valorEmprestimo = valorEmprestimoCliente;
-    numAnos = numAnosCliente;
-    ehBomPagador = ehBomPagadorCliente
-    taxaDeJuros = defineTaxa(idadeCliente)
-    avalistas = avalistasCliente
-}
-
 function defineTaxa(idadeCliente){
     if(idade >= 18 && idade <= 25){
         return 0.09
@@ -259,10 +239,75 @@ function defineTaxa(idadeCliente){
     }
 }
 
-cadastraCliente('Manuel','Serrano',90,150000,2,true,['Manuel','Ricardo','Ezildo'])
+let nome;
+let sobrenome;
+let idade;
+let valorEmprestimo;
+let taxaDeJuros;
+let numAnos;
+let ehBomPagador;
+let avalistas
+
+function cadastraCliente(nomeCliente,sobrenomeCliente,idadeCliente,valorEmprestimoCliente, numAnosCliente, ehBomPagadorCliente, avalistasCliente){
+    cliente = {
+        nome : nomeCliente,
+        sobrenome : sobrenomeCliente,
+        idade : idadeCliente,
+        emprestimo: {
+            valorEmprestimo: valorEmprestimoCliente,
+            numAnos: numAnosCliente,
+            ehBomPagador: ehBomPagadorCliente,
+            taxaDeJuros: defineTaxa(idadeCliente),
+            avalistas: avalistasCliente
+        },
+        adicionaAvalista: function(avalista){
+            this.emprestimo.avalistas.push(avalista)
+        },
+        removeAvalista: function(){
+            this.emprestimo.avalistas.pop()
+        },
+        editaAvalista: function(nomeAvalista,indice){
+            this.emprestimo.avalistas[indice] = nomeAvalista
+        },
+        ordenaAvalista: function(){
+            this.emprestimo.avalistas.sort()
+        },
+        exibirAvalista: function(){
+            this.emprestimo.avalistas.forEach((avalista,indice) => {
+                console.log(`O AVALISTA ${indice+1} É O ${avalista}`)
+            });
+        }
+    }
+    return cliente
+}
+
+const cliente1 = cadastraCliente('Manuel','Serrano',90,150000,2,true,['Manuel','Ricardo','Ezildo'])
+
+function adicionaInfLogin(cliente,email,senha){
+    if(email.indexOf('@') !== -1 && senha.length > 5){
+        cliente.login ={
+            email: email,
+            senha: senha
+        }
+        return cliente
+    }else{
+        return 'Credenciais inválidas'
+    }
+}
 
 
-function adicionaAvalista(avalista){
+/*console.log(adicionaInfLogin(cliente1,'edival@gmail.com.br','Neymar22'))
+console.log(adicionaInfLogin(cliente1,'edivalgmail.com.br','Neymar22'))
+console.log(cliente.login.email)*/
+
+// console.log(Object.entries(cliente))
+for(const [key,value] of Object.entries(cliente)){
+    console.log(`${key} : ${value}`)
+}
+
+
+/*
+function adicionaAalista(avalista){
     avalistas.push(avalista)
 }
 
@@ -293,9 +338,33 @@ console.log(ordenaAvalista(avalistas))
 exibaAvalista();
 
 funcionarios = [['Lucas',18,'Estagiário'],['Serrano',23,'Senior dev'],['Rocco',25,'Tech Lead']]
-
 funcionarios.forEach((funcionario,indiceFunc) => {
     funcionario.forEach((colega,indiceColega) => {
         console.log(`O FUNCIONÁRIO ESTÁ NO SETOR ${indiceFunc} - ${colega} - ${indiceColega}`)
     })
-});
+});*/
+
+/*let email = 'lucasserrano376@gmail.com'
+if(email.includes('@') == true){
+    console.log('email válido')
+}else{
+    console.log('Email inválido')
+}*/
+
+// percorrendo strings
+
+
+function fraseIgualCebolinha(frase){
+    let fraseCebolinha = ''
+    for(let letra of frase){
+        if(letra === 'r'){
+            fraseCebolinha += 'l'
+        }else{
+            fraseCebolinha += letra
+        }
+    }
+
+    return fraseCebolinha
+}
+
+console.log(fraseIgualCebolinha('nao troco as palavras'))
