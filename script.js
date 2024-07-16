@@ -283,6 +283,12 @@ function cadastraCliente(nomeCliente,sobrenomeCliente,idadeCliente,valorEmpresti
 
 const cliente1 = cadastraCliente('Manuel','Serrano',90,150000,2,true,['Manuel','Ricardo','Ezildo'])
 
+function credenciaisInvalidas(mensagem){
+    this.nome = 'Credenciais Inválidas'
+    this.mensagem = mensagem
+}
+
+
 function adicionaInfLogin(cliente,email,senha){
     if(email.indexOf('@') !== -1 && senha.length > 5){
         cliente.login ={
@@ -291,19 +297,25 @@ function adicionaInfLogin(cliente,email,senha){
         }
         return cliente
     }else{
-        return 'Credenciais inválidas'
+        throw new credenciaisInvalidas('Os dados são inválidos')
     }
 }
-
+try{
+    console.log(adicionaInfLogin(cliente1,'edival@gmail.com.br','Neymar22'))
+}catch(error){
+    console.log(error)
+    console.log('nome', error.nome)
+}finally{
+    console.log('DESEJA REALIZAR UMA NOVA OPERAÇÃO ?')
+}
 
 /*console.log(adicionaInfLogin(cliente1,'edival@gmail.com.br','Neymar22'))
-console.log(adicionaInfLogin(cliente1,'edivalgmail.com.br','Neymar22'))
 console.log(cliente.login.email)*/
 
 // console.log(Object.entries(cliente))
-for(const [key,value] of Object.entries(cliente)){
+/*for(const [key,value] of Object.entries(cliente)){
     console.log(`${key} : ${value}`)
-}
+}*/
 
 
 /*
@@ -367,4 +379,32 @@ function fraseIgualCebolinha(frase){
     return fraseCebolinha
 }
 
-console.log(fraseIgualCebolinha('nao troco as palavras'))
+// tratamento de erros em js
+// try/catch
+
+/*try{
+    let x = X + 20 // SE DERMOS OU NN VALOR CERTO O FINALLY VAI SER EXECUTADO 
+    console.log(x)
+}catch(error){
+    console.log('ERRO')
+}finally{
+    console.log('FIM DO BLOCO FINALLY')
+}
+
+// throw 
+
+function somar(a,b){
+    if(typeof a !== 'number'){
+        throw TypeError('O primeiro argumento não é um número')
+    }
+    if(typeof b !== 'number'){
+        throw TypeError('O segundo argumento não é um número')
+    }
+    return a+b
+}
+
+try{
+    console.log(somar('1',20))
+}catch(error){
+    console.log(error)
+}*/
