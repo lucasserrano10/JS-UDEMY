@@ -408,3 +408,19 @@ try{
 }catch(error){
     console.log(error)
 }*/
+
+//getElementbyId
+
+const paleta1 = document.getElementById("paleta-1")
+const paleta2 = document.getElementById("paleta-2")
+const paleta3 = document.getElementById("paleta-3")
+
+console.log(paleta1)
+console.log(paleta2)
+console.log(paleta3)
+
+//getElementbyClassName
+
+const todasPaletas = document.getElementsByClassName('paleta')
+console.log(todasPaletas)
+console.log(todasPaletas[1])
