@@ -424,3 +424,41 @@ console.log(paleta3)
 const todasPaletas = document.getElementsByClassName('paleta')
 console.log(todasPaletas)
 console.log(todasPaletas[1])
+
+/*console.log('Harry Potter')
+setTimeout(console.log, 1500, 'Toy Story')
+console.log('Monsters Inc')
+console.log('Avatar')
+setTimeout(console.log, 2500, 'Barbie')*/
+
+function exibeNome(nome){
+    const promise = (resolve,reject) => {
+        setTimeout(() => {
+            if(nome === "Lucas")
+                resolve(nome)
+            else{
+                reject(new Error('Nome inválido !'))
+            }
+        },3000)
+    }
+    return new Promise(promise)
+}
+
+function exibeSobrenome(){
+    console.log('Serrano')
+}
+
+async function funcaoAsync(){
+try{
+    const meuNome = await exibeNome('')
+    console.log(meuNome)
+    await exibeSobrenome()
+    await console.log('Tudo bem ?')
+    await console.log('Quantos Anos Voce têm ?')
+}catch(erro){
+    console.error(erro)
+}
+}
+
+console.log('Olá,   ')
+funcaoAsync()
