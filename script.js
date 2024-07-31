@@ -470,7 +470,7 @@ console.log(regex.test(stringtest))
 */
 
 function validarEmail(email){
-    const regexEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     if(regexEmail.test(email)){
         console.log('EMAIL VÁLIDO')
     }else{
@@ -490,3 +490,10 @@ function validaCPF(cpf){
 
 validarEmail(prompt('DIGITE SEU EMAIL ->'))
 validaCPF(prompt('DIGITE SEU CPF ->'))
+
+/*let produtos = "123242-B \n 5465462-C \n 89574563-R \n 78657463-A \N 87654635-F"
+const regex = /[0-9]+[-][A-Z]/
+//const resultado = produtos.match(regex)
+const resultado = regex.exec(produtos)
+console.log(resultado)
+*/
