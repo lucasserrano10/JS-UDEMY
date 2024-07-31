@@ -429,7 +429,7 @@ console.log(todasPaletas[1])
 setTimeout(console.log, 1500, 'Toy Story')
 console.log('Monsters Inc')
 console.log('Avatar')
-setTimeout(console.log, 2500, 'Barbie')*/
+setTimeout(console.log, 2500, 'Barbie')
 
 function exibeNome(nome){
     const promise = (resolve,reject) => {
@@ -462,3 +462,31 @@ try{
 
 console.log('Olá,   ')
 funcaoAsync()
+
+
+const stringtest = "Hello World"
+const regex = /Hello/
+console.log(regex.test(stringtest))
+*/
+
+function validarEmail(email){
+    const regexEmail = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+    if(regexEmail.test(email)){
+        console.log('EMAIL VÁLIDO')
+    }else{
+        throw new Error('Email inválido !!')
+    }
+}
+
+function validaCPF(cpf){
+    const regexCPF = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/
+    if(regexCPF.test(cpf)){
+        console.log('CPF VÁLIDO')
+    }else{
+        throw new Error('CPF inválido !!')
+    }
+}
+
+
+validarEmail(prompt('DIGITE SEU EMAIL ->'))
+validaCPF(prompt('DIGITE SEU CPF ->'))
