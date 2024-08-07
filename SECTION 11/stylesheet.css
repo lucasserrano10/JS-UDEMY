@@ -96,3 +96,12 @@ img {
     text-align: center;
     justify-content: center;
 }
+
+#card-icon{
+    margin-left: 5px;
+    width: 45px;
+    height: 30px;
+    padding-top: 10px;
+    transition: all 0.3s ease;
+    display: none;
+}

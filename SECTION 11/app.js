@@ -84,9 +84,17 @@ function validaCodigo(){
     if(regex.test(codigoSeg.value)){
         console.log(codigoSeg.value);
     }else{
-        throw new Error("Códido de segurança inválido");
+        throw new Error("Códigoo de segurança inválido");
     }
 }
+
+function limparInputs(){
+    const inputs = document.querySelectorAll(".formulario input")
+    inputs.forEach(function(input){
+        input.value = ''
+    })
+}
+
 
 function validaFormulario(){
     try{
@@ -100,6 +108,7 @@ function validaFormulario(){
         validaData()
         validaCodigo()
         alert("Dados cadastrados com sucesso!!");
+        limparInputs()
     }catch(erro){
         mensagemErro.innerHTML = erro.message;
     }
