@@ -467,7 +467,7 @@ funcaoAsync()
 const stringtest = "Hello World"
 const regex = /Hello/
 console.log(regex.test(stringtest))
-*/
+
 
 function validarEmail(email){
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -490,10 +490,71 @@ function validaCPF(cpf){
 
 validarEmail(prompt('DIGITE SEU EMAIL ->'))
 validaCPF(prompt('DIGITE SEU CPF ->'))
-
+*/
 /*let produtos = "123242-B \n 5465462-C \n 89574563-R \n 78657463-A \N 87654635-F"
 const regex = /[0-9]+[-][A-Z]/
 //const resultado = produtos.match(regex)
 const resultado = regex.exec(produtos)
 console.log(resultado)
+
+
+class Carro {
+    nome;
+    cor;
+    velocidadeMax;
+    velocidadeAtual;
+
+    constructor(nome,cor,velocidadeAtual,velocidadeMax){
+        this.nome = nome
+        this.cor = cor
+        this.velocidadeAtual = velocidadeAtual
+        this.velocidadeMax = velocidadeMax
+    }
+
+    acelerar(velocidadeAdicional){
+        this.velocidadeAtual += velocidadeAdicional
+    }
+}
+
+const ferrari = new Carro('FERRARI', 'VERMELHO', 320, 260)
+const mclaren = new Carro('MCLAREN', 'AMARELO', 310, 240)
+
+console.log(ferrari)
+console.log(mclaren)
 */
+
+class Funcionario{
+    nome;
+    sobrenome;
+    idade;
+    #cpf;
+
+    constructor(nome,sobrenome,idade,cpf){
+        this.nome = nome
+        this.sobrenome = sobrenome
+        this.idade = idade
+        this.#cpf = cpf
+    }
+
+    get cpf(){
+        return this.#cpf
+    }
+
+    set cpf(novoCpf){
+        this.#cpf = novoCpf
+    }
+
+    saudacao(){
+        console.log(`Olá meu nome é ${this.nome} e meu sobrenome é ${this.sobrenome} e tenho ${this.idade} anos`)
+    }
+}
+
+let nomeUsuario = prompt('DIGITE SEU NOME ->')
+let sobrenomeUsuario = prompt('DIGITE SEU SOBRENOME ->')
+let idadeUsuario = Number(prompt('DIGITE SUA IDADE ->'))
+let cpfUsuario = Number(prompt('DIGITE SEU CPF - >'))
+const funcionario1 = new Funcionario(nomeUsuario,sobrenomeUsuario,idadeUsuario,cpfUsuario)
+
+funcionario1.cpf = 28986823810
+console.log(funcionario1.cpf)
+funcionario1.saudacao()
