@@ -549,12 +549,46 @@ class Funcionario{
     }
 }
 
-let nomeUsuario = prompt('DIGITE SEU NOME ->')
-let sobrenomeUsuario = prompt('DIGITE SEU SOBRENOME ->')
-let idadeUsuario = Number(prompt('DIGITE SUA IDADE ->'))
-let cpfUsuario = Number(prompt('DIGITE SEU CPF - >'))
-const funcionario1 = new Funcionario(nomeUsuario,sobrenomeUsuario,idadeUsuario,cpfUsuario)
+class Aluno extends Funcionario{
+    #serie
+    #turma
+    constructor(nome,sobrenome,idade,cpf,serie,turma){
+        super(nome,sobrenome,idade,cpf)
+        this.#serie = serie
+        this.#turma = turma
+    }
 
-funcionario1.cpf = 28986823810
-console.log(funcionario1.cpf)
-funcionario1.saudacao()
+    get serie(){
+        return this.#serie
+    }
+
+    saudacao(){
+        console.log(`Olá, Meu nome é ${this.nome}, e faço ${this.#serie} ${this.turma}`)
+    }
+}
+
+
+class Professor extends Funcionario{
+    #disciplina
+    #horas
+    constructor(nome,sobrenome,idade,cpf,disciplina,horas){
+        super(nome,sobrenome,idade,cpf)
+        this.#disciplina = disciplina
+        this.#horas = horas
+    }
+
+    get disciplina(){
+        return this.#disciplina
+    }
+
+    saudacao(){
+        console.log(`Olá meu nome é ${this.nome} e sou professor de ${this.#disciplina}`)
+    }
+}
+
+const professor1 = new Professor('Arnaldo', 'Coelho', 76, 23443254312, 'Historia', 46)
+console.log(professor1)
+professor1.saudacao()
+const aluno1 = new Aluno('Joaquim', 'Ramal', 16, 12342343422,3,'A-2')
+console.log(aluno1)
+aluno1.saudacao()
