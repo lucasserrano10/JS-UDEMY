@@ -32,7 +32,7 @@ if(valorTotal >= condicao){
     console.log('FRÉTE GRÁTIS')
 }else{
     console.log('FRETE DE 25 R$')
-}*/
+}
 
 /*let nome = 'Manuel';
 let sobrenome = 'Serrano';
@@ -62,7 +62,7 @@ let juros = valorEmprestimo * taxaJuros * numAnos
 let montante = valorEmprestimo + juros
 
 console.log(`Juros - > ${juros}, Montante - > ${montante}`)
-*/
+
 
 /*let cargo = 'Arquiteto';
 
@@ -83,7 +83,7 @@ switch(cargo){
         console.log('Escolha um Cargo')
         break;
 }
-*/
+
 /*let emailValido = false 
 let senhaValida = true
 let validacao = emailValido ? (senhaValida ? 'CREDENCIAIS VÁLIDAS' : 'SENHA INVÁLIDA') : 'EMAIL INVÁLIDO'
@@ -103,12 +103,12 @@ function b(){
 
 for(let cont = 1; cont <= 50; cont++){
     console.log(cont)
-}*/
+}
 
 /*for(let cont = 10; cont >= 1; cont--){
     console.log(cont)
 }
-console.log('FELIZ ANO NOVO')*/
+console.log('FELIZ ANO NOVO')
 
 /*
 let nome = 'Manuel';
@@ -145,14 +145,14 @@ while(valorEmprestimo != 0){
     let montante = valorEmprestimo + juros
     console.log(`Juros - > ${juros}, Montante - > ${montante}`)
 }
-console.log('FIM DO PROGRAMA')*/
+console.log('FIM DO PROGRAMA')
 /*
 for(let i = 0; i <= 20; i++){
     if(i % 2 === 1){
         continue;
     }
     console.log(i)
-}*/
+}
 
 /*
 console.log(` Nome: ${nome} \n Sobrenome: ${sobrenome} \n Idade: ${idade}`);
@@ -167,7 +167,7 @@ while(valorEmprestimo != 0){
     let montante = valorEmprestimo + juros
     console.log(`Juros - > ${juros}, Montante - > ${montante}`)
 }
-console.log('FIM DO PROGRAMA')*/
+console.log('FIM DO PROGRAMA')
 
 // função expressão
 /*
@@ -178,23 +178,23 @@ const media = function calcularMedia(num1,num2,num3){
 
 console.log(media(10,15,20))
 
-*/
+
 // arrow function
-/*
+
 const mediaDoisNumeros = (num1,num2) => {
     let area = (num1 + num2) / 2
     return area
 }
 
 console.log(mediaDoisNumeros(10,100))
-*/
+
 // PARAMETRO REST
 /*function exibeNumeros(...numeros){
     console.log(numeros)
 }
 
 exibeNumeros(2,34,45,3,42)
-exibeNumeros(1,2)*/
+exibeNumeros(1,2)
 
 //array / arranjo
 
@@ -202,7 +202,7 @@ exibeNumeros(1,2)*/
 array1[3] = 'ELEMENTO4'
 console.log(array1)
 array1.sort()
-console.log(array1)*/
+console.log(array1)
 
 
 
@@ -221,11 +221,11 @@ console.log(numerosImpares)
 //find
 const numerosFind = [12,14,64,75]
 const novosNumerosFind = numerosFind.find((numero) => numero > 15)
-console.log(novosNumerosFind)*/
+console.log(novosNumerosFind)
 
 /*compradoresRifa = ['Lucas', 'Bianca', 'Stephany','João']
 let indiceAleatorio = Math.floor(Math.random()*4)
-console.log(`O Ganhador da rifa foi ${compradoresRifa[indiceAleatorio]}`)*/
+console.log(`O Ganhador da rifa foi ${compradoresRifa[indiceAleatorio]}`)
 
 function defineTaxa(idadeCliente){
     if(idade >= 18 && idade <= 25){
@@ -310,12 +310,12 @@ try{
 }
 
 /*console.log(adicionaInfLogin(cliente1,'edival@gmail.com.br','Neymar22'))
-console.log(cliente.login.email)*/
+console.log(cliente.login.email)
 
 // console.log(Object.entries(cliente))
 /*for(const [key,value] of Object.entries(cliente)){
     console.log(`${key} : ${value}`)
-}*/
+}
 
 
 /*
@@ -354,14 +354,14 @@ funcionarios.forEach((funcionario,indiceFunc) => {
     funcionario.forEach((colega,indiceColega) => {
         console.log(`O FUNCIONÁRIO ESTÁ NO SETOR ${indiceFunc} - ${colega} - ${indiceColega}`)
     })
-});*/
+});
 
 /*let email = 'lucasserrano376@gmail.com'
 if(email.includes('@') == true){
     console.log('email válido')
 }else{
     console.log('Email inválido')
-}*/
+}
 
 // percorrendo strings
 
@@ -407,7 +407,7 @@ try{
     console.log(somar('1',20))
 }catch(error){
     console.log(error)
-}*/
+}
 
 //getElementbyId
 
@@ -490,7 +490,7 @@ function validaCPF(cpf){
 
 validarEmail(prompt('DIGITE SEU EMAIL ->'))
 validaCPF(prompt('DIGITE SEU CPF ->'))
-*/
+
 /*let produtos = "123242-B \n 5465462-C \n 89574563-R \n 78657463-A \N 87654635-F"
 const regex = /[0-9]+[-][A-Z]/
 //const resultado = produtos.match(regex)
@@ -521,7 +521,7 @@ const mclaren = new Carro('MCLAREN', 'AMARELO', 310, 240)
 
 console.log(ferrari)
 console.log(mclaren)
-*/
+
 
 class Funcionario{
     nome;
@@ -592,3 +592,32 @@ professor1.saudacao()
 const aluno1 = new Aluno('Joaquim', 'Ramal', 16, 12342343422,3,'A-2')
 console.log(aluno1)
 aluno1.saudacao()
+
+
+class Pessoa{
+    nome;
+    constructor(nome){
+        this.nome = nome
+    }
+    saudar(){
+        console.log(`Ola, meu nome é ${this.nome}`)
+    }
+}
+
+class Professor{
+    constructor(pessoa,disciplina){
+        this.pessoa = pessoa
+        this.nome = pessoa.nome
+        this.disciplina = disciplina
+    }
+
+    saudar(){
+        console.log(`Olá meu nome é ${this.nome}, sou professor de ${this.disciplina}`)
+    }
+}
+
+const pessoa = new Pessoa('Manuel')
+
+const professor = new Professor(pessoa, 'programação')
+professor.saudar()
+*/
